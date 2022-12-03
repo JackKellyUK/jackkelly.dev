@@ -1,7 +1,7 @@
 import Card from "../../components/movie/card/card";
 import Header from "../../components/header/header";
 import Layout from '../../components/layout'
-import Container from '../../components/container'
+import Container from '../../components/container/container'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y, Scrollbar } from 'swiper';
