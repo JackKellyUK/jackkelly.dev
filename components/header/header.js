@@ -5,17 +5,15 @@ const Header = ({links}) => {
     return (
         <header className={styles.header}>
             <Link href="/">
-                <h1>
-                    <a className="flex items-center">
-                        <img className="m-4" src="/graphic.svg" alt="jackkelly.dev" />
-                        jackkelly.dev
-                    </a>
+                <h1 className="flex items-center">
+                    <img className="m-4" src="/graphic.svg" alt="jackkelly.dev" />
+                    jackkelly.dev
                 </h1>
             </Link>
 
             <nav>
                 {Object.keys(links).map(key => 
-                    <Link href={links[key]}><a className="button">{key}</a></Link>
+                    <Link className="button" href={links[key]}>{key}</Link>
                 )}
             </nav>
         </header>

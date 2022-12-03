@@ -17,17 +17,16 @@ const Card = ({ data }) => {
                     id: data.id
                 }
             }}
+            title={title} className={styles.card}
         >
-            <a title={title} className={styles.card}>
-                <img src={"https://image.tmdb.org/t/p/w500" + data.poster_path} />
-                <div className={styles.cardContent}>
-                    <p className={styles.cardRating}><FontAwesomeIcon className={styles.icon} icon={faStar} />{ data.vote_average.toFixed(1) }</p>
-                    <h3>
-                        {title}
-                    </h3>
-                    <p className={styles.cardDate}>{ date.format('Do MMMM YYYY') }</p>
-                </div>
-            </a>
+            <img src={"https://image.tmdb.org/t/p/w500" + data.poster_path} />
+            <div className={styles.cardContent}>
+                <p className={styles.cardRating}><FontAwesomeIcon className={styles.icon} icon={faStar} />{ data.vote_average.toFixed(1) }</p>
+                <h3>
+                    {title}
+                </h3>
+                <p className={styles.cardDate}>{ date.format('Do MMMM YYYY') }</p>
+            </div>
         </Link>
     );
   };
