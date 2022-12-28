@@ -25,7 +25,7 @@ const Header = () => {
                             <li><a href="#home" className="global-underline">Home</a></li>
                             <li><a href="#portfolio" className="global-underline">Portfolio</a></li>
                             <li><a href="#blog" className="global-underline">Blog</a></li>
-                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#experience" className="global-underline">Experience</a></li>
                         </ul>
                     </ScrollspyNav>
                 </div>

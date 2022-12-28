@@ -11,10 +11,10 @@
     }
 
     .global-underline {
-        @apply relative after:content-[''] after:w-0 after:global-gradient after:absolute after:h-0.5 after:bottom-0 after:left-0 after:transition-width after:ease-in-out after:duration-300
+        @apply relative after:content-[''] after:w-full after:bg-white after:absolute after:h-1 after:top-full after:left-0 after:scale-x-0 after:transition-transform after:ease-out after:duration-500 after:origin-bottom-right
     }
 
     .is-active {
-        @apply after:w-full;
+        @apply after:scale-x-100 after:origin-bottom-left
     }
 }

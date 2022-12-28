@@ -36,7 +36,7 @@ module.exports = {
       fontFamily: {
         'sans': ['Poppins', 'ui-sans-serif']
       },
-      height: {
+      minHeight: {
         '80vh': '80vh'
       },
       backgroundImage: {
