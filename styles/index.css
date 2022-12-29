@@ -17,4 +17,8 @@
     .is-active {
         @apply after:scale-x-100 after:origin-bottom-left
     }
+
+    h1, h2, h3 {
+        @apply font-semibold
+    }
 }

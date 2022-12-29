@@ -9,7 +9,7 @@ import { getAllPostsForHome, getSlides } from '../lib/api'
 import Head from 'next/head'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faCode, faLocationArrow, faLink, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faCode, faLocationArrow, faLink, faDatabase, faUniversalAccess, fa1 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faJs, faPhp, faSass, faJoomla, faHtml5, faGitAlt, faReact } from '@fortawesome/free-brands-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
@@ -32,7 +32,7 @@ export default function Index({ preview, allPosts, slides }) {
       <Container className='pb-24'>
         <Section id='home'>
           <img src='JK.jpeg' className='w-40 rounded-full mb-2' />
-          <h1 className='text-3xl font-semibold'>Jack Kelly</h1>
+          <h1 className='text-3xl'>Jack Kelly</h1>
           <p className='flex'><FontAwesomeIcon className='w-4 mr-2' icon={faCode} />Software Developer</p>
           <p className='flex mb-2'><FontAwesomeIcon className='w-4 mr-2' icon={faLocationArrow} />Bromley, Greater London</p>
 
@@ -44,7 +44,7 @@ export default function Index({ preview, allPosts, slides }) {
         </Section>
 
         <Section id='portfolio'>
-          <h2 className='text-2xl font-semibold border-b-4 border-white mb-2'>Portfolio</h2>
+          <h2 className='text-2xl border-b-4 border-white mb-2'>Portfolio</h2>
 
           <Swiper
             modules={[Navigation, A11y]}
@@ -58,9 +58,9 @@ export default function Index({ preview, allPosts, slides }) {
             {slides.map((item) => (
               <SwiperSlide 
                 key={item.id}
-                className='px-14'
+                className='md:px-14'
               >
-                <h3 className='text-lg font-semibold'>{item.title}</h3>
+                <h3 className='text-lg'>{item.title}</h3>
                 <p>
                   <Link href={'https://' + item.link} target='_blank' className="hover:text-gray-300 ease-in-out duration-300">
                     <FontAwesomeIcon className='w-4 mr-2 inline-block' icon={faLink} />
@@ -80,13 +80,13 @@ export default function Index({ preview, allPosts, slides }) {
                   />
               </SwiperSlide>
             ))}
-            <button className="swiper-button-prev !text-white after:!text-3xl after:font-bold"></button>
-            <button className="swiper-button-next !text-white after:!text-3xl after:font-bold"></button>
+            <button className="swiper-button-prev !hidden md:!block !text-white after:!text-3xl after:font-bold"></button>
+            <button className="swiper-button-next !hidden md:!block !text-white after:!text-3xl after:font-bold"></button>
           </Swiper>
         </Section>
 
         <Section id='blog'>
-          <h2 className='text-2xl font-semibold border-b-4 mb-4 border-white'>Blog</h2>
+          <h2 className='text-2xl border-b-4 mb-4 border-white'>Blog</h2>
 
           <div className='grid md:grid-cols-2 gap-5'>
             {heroPost && (
@@ -104,7 +104,7 @@ export default function Index({ preview, allPosts, slides }) {
         </Section>
 
         <Section id='experience'>
-          <h2 className='text-2xl font-semibold border-b-4 mb-4 border-white'>Experience</h2>
+          <h2 className='text-2xl border-b-4 mb-4 border-white'>Experience</h2>
           
           <div className="grid md:grid-cols-2 gap-5 items-start">
               <div className='bg-gray-700 px-4 py-3 rounded-md'>
@@ -127,6 +127,7 @@ export default function Index({ preview, allPosts, slides }) {
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-1.5 px-2 mr-4 text-[#f34f29] bg-slate-600' icon={faGitAlt} /><span className='py-2'>Git</span></li>
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-white bg-slate-600' icon={faDatabase} /><span className='py-2'>SQL/TSQL</span></li>
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-[#00d8ff] bg-slate-600' icon={faReact} /><span className='py-2'>React</span></li>
+                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-black bg-slate-600' icon={faUniversalAccess} /><span className='py-2'>Accessibility</span></li>
               </ul>
           </div>
         </Section>

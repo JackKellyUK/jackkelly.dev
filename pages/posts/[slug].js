@@ -23,15 +23,15 @@ export default function Post({ post, morePosts, preview }) {
     <Layout preview={preview}>
       <Header />
       
-      <Container>
+      <Container className='py-12'>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+            <article className='max-w-4xl w-full m-auto bg-gray-800 rounded-lg p-8'>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>
