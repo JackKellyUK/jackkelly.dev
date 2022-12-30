@@ -62,7 +62,7 @@ export default function Index({ preview, allPosts, slides }) {
               >
                 <h3 className='text-lg'>{item.title}</h3>
                 <p>
-                  <Link href={'https://' + item.link} target='_blank' className="hover:text-gray-300 ease-in-out duration-300">
+                  <Link href={'https://' + item.link} target='_blank' className="break-all hover:text-gray-300 ease-in-out duration-300">
                     <FontAwesomeIcon className='w-4 mr-2 inline-block' icon={faLink} />
                     {item.link}
                   </Link>

@@ -54,7 +54,6 @@ const Header = () => {
                 });
                 
                 document.querySelectorAll('#menu a').forEach((link) => {
-                    console.log(link)
                     link.addEventListener('click', () => {
                         menu.classList.remove('top-[75px]');
                         menu.classList.remove('opacity-100');
