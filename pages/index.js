@@ -20,6 +20,7 @@ import Link from 'next/link'
 export default function Index({ preview, allPosts, slides }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
+
   return (
     <div className='scroll-smooth'>
       <Layout preview={preview}>
@@ -27,7 +28,7 @@ export default function Index({ preview, allPosts, slides }) {
         <title>Jack Kelly | Website Developer</title>
       </Head>
 
-      <Header/>
+      <Header home={true} />
 
       <Container className='pb-24'>
         <Section id='home'>
@@ -57,7 +58,7 @@ export default function Index({ preview, allPosts, slides }) {
           >
             {slides.map((item) => (
               <SwiperSlide 
-                key={item.id}
+                key={item.title}
                 className='md:px-14'
               >
                 <h3 className='text-lg'>{item.title}</h3>

@@ -40,7 +40,8 @@ module.exports = {
         '80vh': '80vh'
       },
       backgroundImage: {
-        'grid': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(51 65 85 / 0.25)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E\");"
+        'grid': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(51 65 85 / 0.25)'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E\");",
+        'code': "repeating-linear-gradient(180deg, #4b5169 0px, #4b5169 35px, #374151 35px, #374151 70px)"
       },
       transitionProperty: {
         'width': 'width',

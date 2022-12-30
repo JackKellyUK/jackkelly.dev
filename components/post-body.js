@@ -11,18 +11,23 @@ const customMarkdownOptions = (content) => ({
         assets={content.links.assets.block}
       />
     ),
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      if (node.content.length === 1 && (node.content[0].marks.find(item => item.type === 'code'))) {
+        return <pre><code>{node.content[0].value}</code></pre>;
+      }
+    
+      return <p>{children}</p>;
+    }
   },
 })
 
 export default function PostBody({ content }) {
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className={markdownStyles['markdown']}>
-        {documentToReactComponents(
-          content.json,
-          customMarkdownOptions(content)
-        )}
-      </div>
+    <div className={markdownStyles['markdown']}>
+      {documentToReactComponents(
+        content.json,
+        customMarkdownOptions(content)
+      )}
     </div>
   )
 }
