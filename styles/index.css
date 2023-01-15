@@ -33,4 +33,8 @@
     .animate-show {
       @apply opacity-100
     }
+
+    .swiper-button-prev, .swiper-button-next {
+      @apply !hidden md:!block !text-white after:!text-3xl after:font-bold
+    }
 }

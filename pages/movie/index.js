@@ -8,6 +8,8 @@ import { Navigation, A11y, Scrollbar } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
+import Section from "../../components/home/section/section";
+import { useState } from "react";
 
 const links = {
   'Movie': '/movie/movie',
@@ -16,7 +18,7 @@ const links = {
 
 export async function getServerSideProps() {
   const response = await fetch(
-    "https://api.themoviedb.org/3/trending/all/week?api_key=2a6ecf76b3a384a6c78b6c57223297d3"
+    `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.TMDB_KEY}`
   );
   const data = await response.json();
   return {
@@ -28,26 +30,50 @@ export async function getServerSideProps() {
 
 
 const Movie = ({data}) => {
+  const [watchlist, setWatchList] = useState([]);
+
+  const addToWatchList = (e, data) => {
+    e.preventDefault();
+
+    if (inWatchList(data.id)) {
+      setWatchList(watchlist.filter(x => x.id !== data.id))
+    } else {
+      setWatchList([...watchlist, data])
+    }
+  }
+
+  const inWatchList = (id) => {
+    return watchlist.some(x => x.id === id);
+  }
+
     return (
       <Layout>
         <Container>
           <Header links={links} />
 
-          <h2>Trending</h2>
+          <Section>
+            <h2 className='text-2xl border-b-4 mb-4 border-white'>Trending</h2>
 
             <Swiper
                 modules={[Navigation, A11y, Scrollbar]}
                 spaceBetween={15}
-                slidesPerView={6}
-                navigation
+                slidesPerView={4}
+                navigation={{
+                  prevEl: '.swiper-button-prev',
+                  nextEl: '.swiper-button-next'
+                }}
                 scrollbar={{ draggable: true }}
+                className='w-full !pb-4'
             >
                 {data.map((item) => (
-                    <SwiperSlide key={item.id}>
-                        <Card data={item} />
+                    <SwiperSlide key={item.id} className="!h-auto">
+                        <Card data={item} addToWatchList={addToWatchList} inWatchList={inWatchList(item.id)} />
                     </SwiperSlide>
                 ))}
+              <button className="swiper-button-prev"></button>
+              <button className="swiper-button-next"></button>
             </Swiper>
+          </Section>
         </Container>
       </Layout>
     );

@@ -81,8 +81,8 @@ export default function Index({ preview, allPosts, slides }) {
                   />
               </SwiperSlide>
             ))}
-            <button className="swiper-button-prev !hidden md:!block !text-white after:!text-3xl after:font-bold"></button>
-            <button className="swiper-button-next !hidden md:!block !text-white after:!text-3xl after:font-bold"></button>
+            <button className="swiper-button-prev"></button>
+            <button className="swiper-button-next"></button>
           </Swiper>
         </Section>
 
