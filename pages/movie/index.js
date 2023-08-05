@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import Section from "../../components/home/section/section";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = {
   'Movie': '/movie/movie',
@@ -31,6 +31,15 @@ export async function getServerSideProps() {
 
 const Movie = ({data}) => {
   const [watchlist, setWatchList] = useState([]);
+
+  useEffect(() => {
+    const data = window.localStorage.getItem('MOVIE_WATCHLIST', []);
+    setWatchList(JSON.parse(data));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('MOVIE_WATCHLIST', JSON.stringify(watchlist));
+  }, [watchlist]);
 
   const addToWatchList = (e, data) => {
     e.preventDefault();

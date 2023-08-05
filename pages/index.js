@@ -32,9 +32,9 @@ export default function Index({ preview, allPosts, slides }) {
 
       <Container className='pb-24'>
         <Section id='home'>
-          <img src='JK.jpeg' className='w-40 rounded-full mb-2' />
+          <img alt='Jack Kelly' src='JK.webp' className='w-40 rounded-full mb-2' />
           <h1 className='text-3xl'>Jack Kelly</h1>
-          <p className='flex'><FontAwesomeIcon className='w-4 mr-2' icon={faCode} />Software Developer</p>
+          <p className='flex'><FontAwesomeIcon className='w-4 mr-2' icon={faCode} />Web Developer</p>
           <p className='flex mb-2'><FontAwesomeIcon className='w-4 mr-2' icon={faLocationArrow} />Bromley, Greater London</p>
 
           <ul className='flex gap-4'>
