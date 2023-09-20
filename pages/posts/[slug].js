@@ -28,9 +28,7 @@ export default function Post({ post, morePosts, preview }) {
           <>
             <article className='max-w-4xl w-full m-auto bg-gray-800 rounded-lg p-8'>
               <Head>
-                <title>
-                  {post.title}
-                </title>
+                <title>{post.title}</title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>
               <PostHeader

@@ -1,3 +1,8 @@
+import Container from "../../../components/container/container";
+import Head from 'next/head'
+import Header from "../../../components/header/header";
+import Section from "../../../components/home/section/section";
+import Layout from "../../../components/layout";
 
 export async function getServerSideProps(item) {
     const response = await fetch(
@@ -15,9 +20,19 @@ export async function getServerSideProps(item) {
 
 const MovieItem = ({data}) => {
     return (
-        <div>
-            <h1>{data.title}</h1>
-        </div>
+        <Layout>
+            <Head>
+                <title>{data.title}</title>
+            </Head>
+
+            <Header />
+
+            <Container>
+                <Section>
+                    <h1 className="text-4xl tracking-tighter leading-tight md:leading-none mb-6 text-center md:text-left">{data.title}</h1>
+                </Section>
+            </Container>
+        </Layout>
     );
 };
 

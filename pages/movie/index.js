@@ -57,8 +57,10 @@ const Movie = ({data}) => {
 
     return (
       <Layout>
+
+        <Header links={links} />
+
         <Container>
-          <Header links={links} />
 
           <Section>
             <h2 className='text-2xl border-b-4 mb-4 border-white'>Trending</h2>

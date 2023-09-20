@@ -14,6 +14,10 @@
         @apply relative after:content-[''] after:w-full after:bg-white after:absolute after:h-1 after:top-full after:left-0 after:scale-x-0 after:transition-transform after:ease-out after:duration-500 after:origin-bottom-right
     }
 
+    .global-underline-small {
+        @apply global-underline after:h-0.5
+    }
+
     .is-active {
         @apply after:scale-x-100 after:origin-bottom-left
     }

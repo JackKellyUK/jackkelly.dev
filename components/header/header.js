@@ -17,9 +17,7 @@ const Header = (props) => {
                             </h1>
                         </Link>
 
-                        <Menu home={
-                            props.home
-                        }/>
+                        <Menu submenu={props.submenu}/>
 
                         <button aria-label="Toggle menu" id="menu-button" className="w-6 md:hidden">
                             <FontAwesomeIcon icon={faBars}/>

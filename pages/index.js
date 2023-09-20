@@ -10,12 +10,19 @@ import Head from 'next/head'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faCode, faLocationArrow, faLink, faDatabase, faUniversalAccess, fa1 } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn, faGithub, faJs, faPhp, faSass, faJoomla, faHtml5, faGitAlt, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faGithub, faJs, faPhp, faSass, faJoomla, faHtml5, faGitAlt, faReact, faDocker, faAws, faWordpress } from '@fortawesome/free-brands-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link'
+
+const submenu = {
+  '#home': 'Home',
+  '#portfolio': 'Portfolio',
+  '#latest': 'Latest',
+  '#experience': 'Experience'
+}
 
 export default function Index({ preview, allPosts, slides }) {
   const heroPost = allPosts[0]
@@ -28,7 +35,7 @@ export default function Index({ preview, allPosts, slides }) {
         <title>Jack Kelly | Website Developer</title>
       </Head>
 
-      <Header home={true} />
+      <Header submenu={submenu} />
 
       <Container className='pb-24'>
         <Section id='home'>
@@ -86,8 +93,8 @@ export default function Index({ preview, allPosts, slides }) {
           </Swiper>
         </Section>
 
-        <Section id='blog'>
-          <h2 className='text-2xl border-b-4 mb-4 border-white'>Blog</h2>
+        <Section id='latest'>
+          <h2 className='text-2xl border-b-4 mb-4 border-white'>Latest</h2>
 
           <div className='grid md:grid-cols-2 gap-5'>
             {heroPost && (
@@ -110,7 +117,7 @@ export default function Index({ preview, allPosts, slides }) {
           <div className="grid md:grid-cols-2 gap-5 items-start">
               <div className='bg-gray-700 px-4 py-3 rounded-md'>
                 <ul className='list-[disclosure-closed] ml-5'>
-                  <li className='my-1'>Rapid deployment of bespoke Joomla! templates</li>
+                  <li className='my-1'>Content Management System driven websites</li>
                   <li className='my-1'>Integration with Management Information Systems</li>
                   <li className='my-1'>Day-to-day client support</li>
                   <li className='my-1'>Accessibility & SEO best practises</li>
@@ -126,9 +133,10 @@ export default function Index({ preview, allPosts, slides }) {
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-1.5 px-2 mr-4 text-[#cc6699] bg-slate-600' icon={faSass} /><span className='py-2'>Sass</span></li>
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-1.5 px-2 mr-4 text-[#5091CD] bg-slate-600' icon={faJoomla} /><span className='py-2'>Joomla</span></li>
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-1.5 px-2 mr-4 text-[#f34f29] bg-slate-600' icon={faGitAlt} /><span className='py-2'>Git</span></li>
-                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-white bg-slate-600' icon={faDatabase} /><span className='py-2'>SQL/TSQL</span></li>
+                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-[#f90] bg-slate-600' icon={faAws} /><span className='py-2'>AWS</span></li>
                 <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-[#00d8ff] bg-slate-600' icon={faReact} /><span className='py-2'>React</span></li>
-                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-black bg-slate-600' icon={faUniversalAccess} /><span className='py-2'>Accessibility</span></li>
+                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-[#21759b] bg-slate-600' icon={faWordpress} /><span className='py-2'>Wordpress</span></li>
+                <li className='flex overflow-hidden bg-gray-700 rounded-md'><FontAwesomeIcon className='w-10 h-10 py-2 px-2 mr-4 text-[#0db7ed] bg-slate-600' icon={faDocker} /><span className='py-2'>Docker</span></li>
               </ul>
           </div>
         </Section>
