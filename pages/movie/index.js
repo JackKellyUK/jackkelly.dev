@@ -41,6 +41,10 @@ const Movie = ({data}) => {
     window.localStorage.setItem('MOVIE_WATCHLIST', JSON.stringify(watchlist));
   }, [watchlist]);
 
+  const inWatchList = (id) => {
+    return watchlist.some(x => x.id === id);
+  }
+
   const addToWatchList = (e, data) => {
     e.preventDefault();
 
@@ -49,10 +53,6 @@ const Movie = ({data}) => {
     } else {
       setWatchList([...watchlist, data])
     }
-  }
-
-  const inWatchList = (id) => {
-    return watchlist.some(x => x.id === id);
   }
 
     return (

@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import Link from 'next/link'
 
 const submenu = {
-  '#home': 'Home',
+  '#home': 'Profile',
   '#portfolio': 'Portfolio',
   '#latest': 'Latest',
   '#experience': 'Experience'
