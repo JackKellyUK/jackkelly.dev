@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import Section from "../../components/home/section/section";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 const links = {
   'Movie': '/movie/movie',
@@ -42,7 +43,7 @@ const Movie = ({data}) => {
   }, [watchlist]);
 
   const inWatchList = (id) => {
-    return watchlist.some(x => x.id === id);
+    return watchlist?.some(x => x.id === id);
   }
 
   const addToWatchList = (e, data) => {
@@ -57,6 +58,9 @@ const Movie = ({data}) => {
 
     return (
       <Layout>
+        <Head>
+          <title>Movie</title>
+        </Head>
 
         <Header links={links} />
 
