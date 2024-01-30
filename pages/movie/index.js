@@ -29,7 +29,6 @@ export async function getServerSideProps() {
   };
 }
 
-
 const Movie = ({data}) => {
   const [watchlist, setWatchList] = useState([]);
 

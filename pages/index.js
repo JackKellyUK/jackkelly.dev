@@ -9,7 +9,7 @@ import { getAllPostsForHome, getSlides } from '../lib/api'
 import Head from 'next/head'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faCode, faLocationArrow, faLink, faDatabase, faUniversalAccess, fa1 } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faCode, faLocationArrow, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faJs, faPhp, faSass, faJoomla, faHtml5, faGitAlt, faReact, faDocker, faAws, faWordpress } from '@fortawesome/free-brands-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
