@@ -1,10 +1,10 @@
 import Script from "next/script";
 
-export default function({ id, children }) {
+export default function({ id, children, alignment = 'items-center' }) {
     return (
         <>
-          <section id={id} className="min-h-80vh flex items-center py-24 animate-hide">
-            <div className="max-w-4xl w-full m-auto bg-gray-800 rounded-lg flex flex-col items-center justify-center p-8">
+          <section id={id} className="min-h-80vh flex py-24 animate-hide">
+            <div className={`max-w-4xl w-full m-auto bg-gray-800 rounded-lg flex flex-col ${alignment} justify-center p-8`}>
               {children}
             </div>
           </section>
