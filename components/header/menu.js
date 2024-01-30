@@ -11,7 +11,7 @@ const Menu = (props) => {
       <div>
           <ul id="menu" className="bg-neutral-900 flex flex-col justify-end items-center gap-3 absolute w-full left-0 pb-4 z-[-1] opacity-0 top-[-400px] transition-all ease-in duration-500 md:gap-6 md:flex-row md:items-center md:z-auto md:static md:w-auto md:py-0 md:pl-0 md:opacity-100">
             <li><a href="/posts" className="global-underline">Blog</a></li>
-            <li><a href="/movie" className="global-underline">Movie</a></li>
+            <li><a href="/tools" className="global-underline">Tools</a></li>
           </ul>
 
           {(hasSubmenu) &&
