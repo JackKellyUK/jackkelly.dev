@@ -4,7 +4,7 @@ import Layout from "../../../components/layout";
 import Header from "../../../components/header/header";
 import Head from "next/head";
 import { useState } from "react";
-import { hexToRgb, Color, Solver } from "./recolour";
+import { hexToRgb, Color, Solver } from "../../api/recolour.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Clipboard from "../../../components/tools/clipboard";
