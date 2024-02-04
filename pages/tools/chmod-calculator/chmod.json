@@ -1,0 +1,44 @@
+{
+    "Owner": {
+        "Read": {
+            "value": 400,
+            "symbol": "r"
+        },
+        "Write": {
+            "value": 200,
+            "symbol": "w"
+        },
+        "Execute": {
+            "value": 100,
+            "symbol": "x"
+        }
+    },
+    "Group": {
+        "Read": {
+            "value": 40,
+            "symbol": "r"
+        },
+        "Write": {
+            "value": 20,
+            "symbol": "w"
+        },
+        "Execute": {
+            "value": 10,
+            "symbol": "x"
+        }
+    },
+    "Public": {
+        "Read": {
+            "value": 4,
+            "symbol": "r"
+        },
+        "Write": {
+            "value": 2,
+            "symbol": "w"
+        },
+        "Execute": {
+            "value": 1,
+            "symbol": "x"
+        }
+    }
+  }
