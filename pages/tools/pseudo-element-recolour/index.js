@@ -13,7 +13,6 @@ export default function Index({ preview }) {
   const [color, setColor] = useState("#00a4d6");
   const [filterBlack, setFilterBlack] = useState("");
 	const [filter, setFilter] = useState("");
-  const [loss, setLoss] = useState(false);
 
   const calculateColour = () => {
     const rgb = hexToRgb(color);
@@ -27,7 +26,7 @@ export default function Index({ preview }) {
     const result = solver.solve();
 
     if (result.loss >= 15) {
-      setLoss(true);
+      calculateColour();
     }
 
     setFilterBlack(`filter: ${result.filter}`);
@@ -74,8 +73,6 @@ export default function Index({ preview }) {
 								</pre>
 							</>
 						}
-
-						{loss && <p className="mb-4">The color is extremely off. Run it again!</p>}
 
             <p className="text-xs self-center">Credit <a className="underline" target="_blank" href="https://stackoverflow.com/questions/42966641/how-to-transform-black-into-any-given-color-using-only-css-filters/43960991#43960991">MultiplyByZer0</a></p>
           </Section>
