@@ -15,7 +15,7 @@ export default function ChmodCalculator({ preview }) {
   useEffect(() => {
     setOctalInput(document.querySelector('#octal'));
     setSymbolInput(document.querySelector('#symbol'));
-    setCheckboxes(document.querySelectorAll('.grid input'));
+    setCheckboxes(document.querySelectorAll('#checkboxes input'));
   }, []);
 
   const handleSymbol = () => {
@@ -57,8 +57,8 @@ export default function ChmodCalculator({ preview }) {
     }
 
     if (octal < 0) {
-      octal = '000';
-      octalInput.value = octal;
+      octal = 0;
+      octalInput.value = '000';
     }
 
     checkboxes.forEach((checkbox) => {
@@ -98,7 +98,7 @@ export default function ChmodCalculator({ preview }) {
             <h1 className="text-2xl border-b-4 mb-4 border-white">Chmod calculator</h1>
             <p className="text-sm mb-6">A calculator to convert Linux file permissions between different formats</p>
 
-            <div className="grid grid-cols-3 gap-8 mb-6">          
+            <div id="checkboxes" className="grid grid-cols-3 gap-8 mb-6">          
               {Object.keys(Checkboxes).map((group) => (
                 <div className="flex flex-col">
                   <h3 className="text-xl">{group}</h3>
@@ -117,7 +117,7 @@ export default function ChmodCalculator({ preview }) {
               ))}
             </div>
 
-            <div className="flex gap-6">
+            <div className="flex flex-col gap-4 md:gap-6 md:flex-row">
               <div>
                 <label className="block mb-1 text-lg font-semibold" htmlFor="octal">Octal</label>
                 <input className="text-black p-1" pattern="[0-7]{0,3}" max="777" required placeholder="777" id="octal" type="number" onBlur={() => { handleOctalCheckboxes(); handleSymbol(); }} />
