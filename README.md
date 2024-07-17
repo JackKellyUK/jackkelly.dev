@@ -2,10 +2,6 @@
 
 Using Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Contentful](https://www.contentful.com/) as the data source.
 
-## Site
-
-**[jackkelly.dev](https://jackkelly.dev/)**
-
 ## Configuration
 
 ### Set up environment variables
